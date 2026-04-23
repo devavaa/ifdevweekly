@@ -2,98 +2,154 @@
     <head>
         <meta charset="UTF-8">
         <title>DATA MAHASISWA</title>
+        <style>
+            .btn-tambah {
+                display: inline-block;
+                background-color: #6c757d;
+                color: white;
+                padding: 6px 14px;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: bold;
+                letter-spacing: 0.5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            .btn-tambah:hover { background-color: #545b62; }
+            .container-btn {
+                text-align: center;
+                margin-bottom: 12px;
+            }
+            .btn-hapus {
+                background-color: #dc3545;
+                color: white;
+                padding: 4px 10px;
+                border: none;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+            .btn-hapus:hover { background-color: #b02a37; }
+        </style>
     </head>
     <body>
         <h1 align="center">DATA MAHASISWA</h1>
-
         <p align="center">
             <a href="index.html">🏠 Home</a> |
             <a href="profile.html">📖 Tentang Kami</a> |
             <a href="contact.html">📞 Contact</a>
         </p>
-
         <hr>
 
+        <h2 align="center">Data Mahasiswa</h2>
 
-            <h2 align="center">Data Mahasiswa</h2>
+        <div class="container-btn">
+            <a href="tambahdata.html" class="btn-tambah">＋ Tambah Data</a>
+        </div>
 
-<table border="1" cellspacing="0" cellpadding="10" align="center">
-    <tr>
-        <th rowspan="2">No</th>
-        <th rowspan="2">Nama</th>
-        <th rowspan="2">Foto</th>
-        <th colspan="3">Nilai</th>
-    </tr>
-    <tr>
-        <th>UTS</th>
-        <th>UAS</th>
-        <th>Tugas</th>
-    </tr>
+        <table border="1" cellspacing="0" cellpadding="10" align="center" id="tabelMahasiswa">
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Nama</th>
+                <th rowspan="2">Foto</th>
+                <th colspan="3">Nilai</th>
+                <th rowspan="2">Aksi</th>
+            </tr>
+            <tr>
+                <th>UTS</th>
+                <th>UAS</th>
+                <th>Tugas</th>
+            </tr>
 
-    <tr align="center">
-        <td>1</td>
-        <td>Ahmad Kempong</td>
-        <td>
-            <img src="asset\image\KPU_Icuk_Sugiarto.jpg" alt="Foto Ahmad Kempong" width="100">
-        </td>
-        <td>80</td>
-        <td>85</td>
-        <td>90</td>
-    </tr>
-        <tr align="center">
-        <td>2</td>
-        <td>Ahmad Badawi</td>
-        <td>
-            <img src="asset\image\ahmad badawi.jpg" alt="Foto Ahmad Kempong" width="100">
-        </td>
-        <td>85</td>
-        <td>87</td>
-        <td>90</td>
-    </tr>
-        </tr>
-        <tr align="center">
-        <td>2</td>
-        <td>Ahmad Badru</td>
-        <td>
-            <img src="asset\image\ahmad badru.jpeg" alt="Foto Ahmad Kempong" width="100">
-        </td>
-        <td>87</td>
-        <td>87</td>
-        <td>92</td>
-    </tr>
-    </table>
-<br>
-<table border="1" cellspacing="0" cellpadding="20" align="center">
-    <!-- Baris 1 -->
-    <tr align="center">
-        <td>1,1</td>
-        <td>1,2</td>
-        <td>1,3</td>
-        <td>1,4</td>
-    </tr>
+            <!-- Data statis -->
+            <tr align="center">
+                <td>1</td>
+                <td>Ahmad Kempong</td>
+                <td><img src="asset/image/KPU_Icuk_Sugiarto.jpg" alt="Foto" width="100"></td>
+                <td>80</td>
+                <td>85</td>
+                <td>90</td>
+                <td>-</td>
+            </tr>
+            <tr align="center">
+                <td>2</td>
+                <td>Ahmad Badawi</td>
+                <td><img src="asset/image/ahmad badawi.jpg" alt="Foto" width="100"></td>
+                <td>85</td>
+                <td>87</td>
+                <td>90</td>
+                <td>-</td>
+            </tr>
+            <tr align="center">
+                <td>3</td>
+                <td>Ahmad Badru</td>
+                <td><img src="asset/image/ahmad badru.jpeg" alt="Foto" width="100"></td>
+                <td>87</td>
+                <td>87</td>
+                <td>92</td>
+                <td>-</td>
+            </tr>
+        </table>
 
-    <!-- Baris 2 -->
-    <tr align="center">
-        <td>2,1</td>
-        <td colspan="2" rowspan="2">?</td>
-        <td>2,4</td>
-    </tr>
+        <script>
+            function loadData() {
+                // Hapus baris dinamis lama dulu
+                var tabel = document.getElementById('tabelMahasiswa');
+                var barisDinamis = tabel.querySelectorAll('.baris-dinamis');
+                barisDinamis.forEach(function(baris) {
+                    baris.remove();
+                });
 
-    <!-- Baris 3 -->
-    <tr align="center">
-        <td>3,1</td>
-        <td>3,4</td>
-    </tr>
+                // Load ulang dari localStorage
+                var dataMahasiswa = JSON.parse(localStorage.getItem('dataMahasiswa')) || [];
+                var nomorAwal = 4;
 
-    <!-- Baris 4 -->
-    <tr align="center">
-        <td>4,1</td>
-        <td>4,2</td>
-        <td>4,3</td>
-        <td>4,4</td>
-    </tr>
-</table>
+                dataMahasiswa.forEach(function(mhs, index) {
+                    var baris = tabel.insertRow(-1);
+                    baris.align = 'center';
+                    baris.className = 'baris-dinamis';
+                    baris.innerHTML =
+                        '<td>' + (nomorAwal + index) + '</td>' +
+                        '<td>' + mhs.nama + '</td>' +
+                        '<td>-</td>' +
+                        '<td>' + mhs.uts + '</td>' +
+                        '<td>' + mhs.uas + '</td>' +
+                        '<td>' + mhs.tugas + '</td>' +
+                        '<td><button class="btn-hapus" onclick="hapusData(' + index + ')">🗑 Hapus</button></td>';
+                });
+            }
 
-</table>
+            function hapusData(index) {
+                if (confirm('Yakin ingin menghapus data ini?')) {
+                    var dataMahasiswa = JSON.parse(localStorage.getItem('dataMahasiswa')) || [];
+                    dataMahasiswa.splice(index, 1);
+                    localStorage.setItem('dataMahasiswa', JSON.stringify(dataMahasiswa));
+                    loadData(); // refresh tabel
+                }
+            }
+
+            // Panggil saat halaman dibuka
+            loadData();
+        </script>
+
+        <br>
+
+        <table border="1" cellspacing="0" cellpadding="20" align="center">
+            <tr align="center">
+                <td>1,1</td><td>1,2</td><td>1,3</td><td>1,4</td>
+            </tr>
+            <tr align="center">
+                <td>2,1</td><td colspan="2" rowspan="2">?</td><td>2,4</td>
+            </tr>
+            <tr align="center">
+                <td>3,1</td><td>3,4</td>
+            </tr>
+            <tr align="center">
+                <td>4,1</td><td>4,2</td><td>4,3</td><td>4,4</td>
+            </tr>
+        </table>
+
     </body>
 </html>
