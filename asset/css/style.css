@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Navigation */
+.nav-main {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 10px;
+}
+
+.nav-main a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.nav-main a:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+/* Typography */
+h1, h2, h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+h1 { font-size: 2.5em; font-weight: 700; }
+h2 { font-size: 2em; font-weight: 500; }
+
+/* Center utilities */
+.text-center { text-align: center; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Tables */
+.data-table, table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.data-table th, table th {
+  background: #007bff;
+  color: white;
+  padding: 15px 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.data-table td, table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.data-table tr:nth-child(even) { background-color: #f8f9fa; }
+.data-table tr:hover { background-color: #e3f2fd; }
+
+.data-table img { max-width: 80px; height: auto; border-radius: 8px; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover { background: #0056b3; transform: translateY(-2px); }
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover { background: #c82333; transform: translateY(-2px); }
+
+.btn-success {
+  background: #28a745;
+  color: white;
+}
+
+.btn-success:hover { background: #218838; transform: translateY(-2px); }
+
+/* Forms */
+.form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.btn-group {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.btn-group .btn { margin: 0 10px; }
+
+/* Navigation table */
+.nav-table {
+  margin: 20px auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-table a {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.nav-table a:hover { background: #e3f2fd; }
+
+/* Images */
+.hero-img { max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+/* Links */
+a { color: #007bff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-main a { display: block; margin: 5px 0; }
+  .data-table { font-size: 14px; overflow-x: auto; display: block; white-space: nowrap; }
+  .form-container { margin: 10px; padding: 20px; }
+}
+
+/* News section */
+.news-section { margin: 30px 0; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
