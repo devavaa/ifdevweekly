@@ -6,10 +6,10 @@
     </head>
     <body>
         <div class="nav-main">
-            <a href="index.html">🏠 Home</a>
-            <a href="profile.html">📖 Profile</a>
-            <a href="contact.html">📞 Contact</a>
-            <a href="mahasiswa.html">👨‍🎓 Data Mahasiswa</a>
+            <a href="index.php">🏠 Home</a>
+            <a href="profile.php">📖 Profile</a>
+            <a href="contact.php">📞 Contact</a>
+            <a href="mahasiswa.php">👨‍🎓 Data Mahasiswa</a>
         </div>
 
         <div class="container">
@@ -19,10 +19,10 @@
 
             <table class="nav-table">
                 <tr>
-                    <td><a href="index.html">Home</a></td>
-                    <td><a href="profile.html">Profile</a></td>
-                    <td><a href="contact.html">Contact</a></td>
-                    <td><a href="mahasiswa.html">Data Mahasiswa</a></td>
+                    <td><a href="index.php">Home</a></td>
+                    <td><a href="profile.php">Profile</a></td>
+                    <td><a href="contact.php">Contact</a></td>
+                    <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
                 </tr>
             </table>
 
