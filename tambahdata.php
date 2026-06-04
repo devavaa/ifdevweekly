@@ -6,10 +6,10 @@
     </head>
     <body>
         <div class="nav-main">
-            <a href="index.html">🏠 Home</a>
-            <a href="profile.html">📖 Profile</a>
-            <a href="contact.html">📞 Contact</a>
-            <a href="mahasiswa.html">👨‍🎓 Data Mahasiswa</a>
+            <a href="index.php">🏠 Home</a>
+            <a href="profile.php">📖 Profile</a>
+            <a href="contact.php">📞 Contact</a>
+            <a href="mahasiswa.php">👨‍🎓 Data Mahasiswa</a>
         </div>
 
         <div class="container">
@@ -45,7 +45,7 @@
 
                 <div class="btn-group">
                     <button class="btn btn-primary" onclick="simpanData()">💾 Simpan</button>
-                    <a href="mahasiswa.html" class="btn btn-danger">✕ Batal</a>
+                    <a href="mahasiswa.php" class="btn btn-danger">✕ Batal</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 localStorage.setItem('dataMahasiswa', JSON.stringify(dataMahasiswa));
 
                 alert('Data berhasil disimpan!');
-                window.location.href = 'mahasiswa.html';
+                window.location.href = 'mahasiswa.php';
             }
         </script>
     </body>

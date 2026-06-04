@@ -6,10 +6,10 @@
     </head>
     <body>
         <div class="nav-main">
-            <a href="index.html">🏠 Home</a>
-            <a href="profile.html">📖 Profile</a>
-            <a href="contact.html">📞 Contact</a>
-            <a href="mahasiswa.html">👨‍🎓 Data Mahasiswa</a>
+            <a href="index.php">🏠 Home</a>
+            <a href="profile.php">📖 Profile</a>
+            <a href="contact.php">📞 Contact</a>
+            <a href="mahasiswa.php">👨‍🎓 Data Mahasiswa</a>
         </div>
 
         <div class="container">
