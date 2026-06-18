@@ -67,9 +67,11 @@
                     👨‍🎓
                 </td>
 
-                <td>
-                    <a href="#">Edit</a> |
-                    <a href="#">Hapus</a>
+               <td>
+                    <a href="hapus.php?id=<?php echo $data['id']; ?>"
+                    onclick="return confirm('Yakin ingin menghapus data ini?')">
+                    Hapus
+                    </a>
                 </td>
             </tr>
 
