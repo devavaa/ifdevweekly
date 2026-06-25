@@ -63,19 +63,41 @@
                 <td><?php echo $data['email']; ?></td>
                 <td><?php echo $data['no_hp']; ?></td>
 
-                <td style="font-size:40px;">
-                    👨‍🎓
+                <td>
+
+                <?php
+                if(!empty($data['foto']))
+                {
+                ?>
+
+                <img
+                src="asset/image/<?php echo $data['foto']; ?>"
+                width="80">
+
+                <?php
+                }
+                else
+                {
+                ?>
+
+                👨‍🎓
+
+                <?php
+                }
+                ?>
+
                 </td>
 
-               <td>
-                    <a href="hapus.php?id=<?php echo $data['id']; ?>"
+              <td>
+                 <a href="ubahdata.php?id=<?php echo $data['id']; ?>">Ubah</a> |
+                 <a href="hapus.php?id=<?php echo $data['id']; ?>"
                     onclick="return confirm('Yakin ingin menghapus data ini?')">
                     Hapus
-                    </a>
-                </td>
+                 </a>
+              </td>
             </tr>
 
-            <?php
+            <?php   
             }
             ?>
 
