@@ -43,12 +43,14 @@ if(isset($_POST["kirim"]))
 </div>
 
 <div class="container">
+
     <h1 class="text-center">DATA MAHASISWA</h1>
 
     <div class="form-container">
+
         <h2>Tambah Data Mahasiswa</h2>
 
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label>Nama</label>
@@ -77,10 +79,11 @@ if(isset($_POST["kirim"]))
 
             <div class="form-group">
                 <label>Foto</label>
-                <input type="file" name="foto">
+                <input type="file" name="foto" accept="image/*">
             </div>
 
             <div class="btn-group">
+
                 <button type="submit" name="kirim" class="btn btn-primary">
                     💾 Simpan
                 </button>
@@ -88,11 +91,13 @@ if(isset($_POST["kirim"]))
                 <a href="mahasiswa.php" class="btn btn-danger">
                     ✕ Batal
                 </a>
+
             </div>
 
         </form>
 
     </div>
+
 </div>
 
 </body>
