@@ -5,12 +5,14 @@
         <link rel="stylesheet" href="asset/css/style.css">
     </head>
     <body>
-        <div class="nav-main">
+            <div class="nav-main">
             <a href="index.php">🏠 Home</a>
             <a href="profile.php">📖 Profile</a>
             <a href="contact.php">📞 Contact</a>
             <a href="mahasiswa.php">👨‍🎓 Data Mahasiswa</a>
-        </div>
+            <a href="login.php">🔑 Login</a>
+            <a href="register.php">📝 Register</a>
+            </div>
 
         <div class="container">
             <h1 class="text-center">INFORMATIKA</h1>
