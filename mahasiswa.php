@@ -1,5 +1,15 @@
 <?php
 
+
+session_start();
+
+if(!isset($_SESSION["login"]))
+{
+    header("Location: login.php");
+    exit;
+}
+
+
     require "fungsi.php";
 
     $qmahasiswa = "SELECT * FROM mahasiswa";
@@ -23,6 +33,7 @@
         <a href="profile.php">📖 Profile</a>
         <a href="contact.php">📞 Contact</a>
         <a href="mahasiswa.php">👨‍🎓 Data Mahasiswa</a>
+        <a href="logout.php">🚪 Logout</a>
     </div>
 
     <div class="container">

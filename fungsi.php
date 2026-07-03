@@ -51,4 +51,44 @@ function tambahdata($data)
     return mysqli_affected_rows($koneksi);
 }
 
+function register($data)
+{
+    global $koneksi;
+
+    $nama = htmlspecialchars($data["nama"]);
+    $username = strtolower(stripslashes($data["username"]));
+
+    $password = mysqli_real_escape_string($koneksi, $data["password"]);
+    $konfirmasi = mysqli_real_escape_string($koneksi, $data["konfirmasi"]);
+
+    // Cek username
+    $cek = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'");
+
+    if(mysqli_fetch_assoc($cek))
+    {
+        echo "<script>alert('Username sudah digunakan');</script>";
+        return false;
+    }
+
+    // Cek konfirmasi password
+    if($password != $konfirmasi)
+    {
+        echo "<script>alert('Konfirmasi password salah');</script>";
+        return false;
+    }
+
+    // Enkripsi password
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Simpan ke database
+    mysqli_query($koneksi,"
+        INSERT INTO user
+        (nama, username, password)
+        VALUES
+        ('$nama', '$username', '$password')
+    ");
+
+    return mysqli_affected_rows($koneksi);
+}
+
 ?>
